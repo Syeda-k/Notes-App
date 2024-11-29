@@ -19,4 +19,7 @@ const NotesSchema= new Schema({
     }
     
 })
-module.exports=mongoose.model('user', NotesSchema)
+const User=mongoose.model('user', NotesSchema)
+User.createIndexs();
+
+module.exports=User;
