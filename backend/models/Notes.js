@@ -1,27 +1,16 @@
-const mongoose=require('mongoose')
-const { Schema } = mongoose;
+// models/Notes.js
+const mongoose = require('mongoose');
 
-const NotesSchema= new Schema({
-    title:{
-        type:String,
-        required:true
-    },
-    description:{
-        type:String,
-        required:true
-    },
-    tag:{
-        type:String,
-        default:'General'
-    
-    },
-    date:{
-        type:Date,
-        default:Date.now
-    }
-    
-})
-const User=mongoose.model('user', NotesSchema)
-User.createIndexs();
+// Define the schema for Notes
+const NoteSchema = new mongoose.Schema({
+  title: {
+    type: String,
+    required: true,
+  },
+  content: {
+    type: String,
+    required: true,
+  },
+});
 
-module.exports=User;
+module.exports = mongoose.model('Notes', NoteSchema);
