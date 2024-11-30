@@ -1,5 +1,6 @@
 // index.js
-require('dotenv').config();  // Load environment variables from .env file
+require('dotenv').config();  // This loads the environment variables from the .env file
+// Load environment variables from .env file
 const express = require('express');
 const connectToMongo = require('./db');  // MongoDB connection file
 const jwt = require('jsonwebtoken');  // JWT library

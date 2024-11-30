@@ -1,9 +1,10 @@
-// db.js
 const mongoose = require('mongoose');
 
 const connectToMongo = async () => {
   try {
-    await mongoose.connect(process.env.MONGO_URI, {
+    // Directly setting the Mongo URI
+    const mongoUri = 'mongodb://localhost:27017/inotebook';  // Direct Mongo URI
+    await mongoose.connect(mongoUri, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
