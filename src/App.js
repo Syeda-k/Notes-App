@@ -13,11 +13,12 @@ function App() {
  <Router>
       <div className="App">
         <Navbar />
-        <Routes>
+        <div className='container'><Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           
-        </Routes>
+        </Routes></div>
+        
       </div>
     </Router>
     </NotesState>

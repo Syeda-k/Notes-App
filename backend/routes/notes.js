@@ -3,11 +3,11 @@ const router = express.Router();
 const Notes = require('../models/Notes');
 const authenticateToken = require('../middleware/fetchuser');
 
-// Fetch all notes (requires authentication)
-router.get('/', authenticateToken, async (req, res) => {
+// Fetch all notes (no authentication required)
+router.get('/', async (req, res) => {
   try {
-    const notes = await Notes.find({ user: req.user.id }); // Filter notes by user ID
-    res.json(notes); // Return notes as JSON
+    const notes = await Notes.find(); // Fetch all notes without user-specific filtering
+    res.json(notes); // Return all notes as JSON
   } catch (error) {
     console.error(error.message);
     res.status(500).send('Internal Server Error');
